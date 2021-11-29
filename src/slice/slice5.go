@@ -5,7 +5,7 @@ import "fmt"
 func main() {
 	/* 创建切片 */
 	numbers := []int{0, 1, 2, 3, 4, 5, 6, 7, 8}
-	printSlice(numbers)
+	slice(numbers)
 
 	/* 打印原始切片 */
 	fmt.Println("numbers ==", numbers)
@@ -20,18 +20,18 @@ func main() {
 	fmt.Println("numbers[4:] ==", numbers[4:])
 
 	numbers1 := make([]int, 0, 5)
-	printSlice(numbers1)
+	slice(numbers1)
 
 	/* 打印子切片从索引  0(包含) 到索引 2(不包含) */
 	number2 := numbers[:2]
-	printSlice(number2)
+	slice(number2)
 
 	/* 打印子切片从索引 2(包含) 到索引 5(不包含) */
 	number3 := numbers[2:5]
-	printSlice(number3)
+	slice(number3)
 
 }
 
-func prinSlice(x []int) {
+func slice(x []int) {
 	fmt.Printf("len=%d cap=%d slice=%v\n", len(x), cap(x), x)
 }
